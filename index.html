@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Challenges We Face: Desire, Mental Health, and the Cost of Living</title>
+<meta name="description" content="A blog article on how desire, mental health, and the rising cost of living shape the choices people make.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Libre+Baskerville:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --beige:#f4f1e8; --ink:#1d1b19; --bronze:#9b4818; --gold:#bf9556;
+  --green:#323f2b; --sand:#d8c3a5; --sage:#8c9a79; --clay:#c98d63;
+  --serif:"Libre Baskerville",Georgia,"Times New Roman",serif;
+  --sans:Lato,"Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--beige);color:var(--ink);font-family:var(--sans);font-size:1.05rem;line-height:1.75}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--bronze);outline-offset:4px}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.2}
+section{padding:clamp(4rem,9vw,7rem) 1.5rem}
+.wrap{max-width:1040px;margin:0 auto}
+.center{text-align:center}
+.rule{display:block;height:1px;background:var(--gold);border:0}
+
+/* Hero */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:2.2rem;padding-top:3rem}
+.badge{width:76px;height:76px;border-radius:50%;background:var(--bronze);display:grid;place-items:center;color:var(--beige);font:italic 1.9rem var(--serif);box-shadow:0 0 0 4px var(--bronze),0 0 0 5px var(--beige) inset;outline:1px solid var(--beige);outline-offset:-5px}
+.hero h1{font-size:clamp(2.6rem,8vw,5.6rem);letter-spacing:-.01em}
+.hero h1 em{font-style:italic}
+.hero p{max-width:34rem;font-size:clamp(1.05rem,2.2vw,1.35rem);line-height:1.8}
+.hero a.cta{font:italic 1.05rem var(--serif);color:var(--bronze);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:2px}
+.hero a.cta:hover{border-color:var(--bronze)}
+
+/* About */
+.about{max-width:640px;margin:0 auto;text-align:center}
+.about h2{font-size:clamp(2rem,4.6vw,3rem);font-style:italic;color:var(--bronze);margin-bottom:1.5rem}
+.scribble{position:relative;display:inline-block}
+.scribble::after{content:"";position:absolute;inset:-.12em -.28em -.05em -.3em;border:1px solid currentColor;border-radius:50%;transform:rotate(-2deg);pointer-events:none}
+.about p{text-align:left}
+.arch{border-radius:999px 999px 0 0;overflow:hidden;position:relative}
+
+/* Section titles */
+.title{font-size:clamp(2rem,4.6vw,3rem);color:var(--bronze);margin-bottom:3.2rem}
+.squig{display:block;margin:.2rem auto 0;width:150px;height:20px}
+
+/* Background */
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem}
+.trio .ico{width:62px;height:62px;border-radius:50%;background:var(--bronze);margin:0 auto 1.1rem;display:grid;place-items:center;outline:1px solid var(--bronze);outline-offset:3px}
+.ico svg,.arch svg{width:28px;height:28px;stroke:var(--beige);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.trio h3{font-size:1.2rem;padding-bottom:.9rem;margin-bottom:.9rem;border-bottom:1px solid var(--gold)}
+.trio small{display:block;font-size:.92rem;line-height:1.6}
+.trio b{display:block}
+
+/* Focuses */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem;max-width:880px;margin:0 auto}
+.cards .arch{aspect-ratio:1/1.1;display:grid;place-items:center;margin-bottom:1rem}
+.cards .arch svg{width:60px;height:60px;stroke-width:1.2}
+.cards h3{font-size:1.15rem;padding-bottom:.6rem;margin-bottom:.7rem;border-bottom:1px solid var(--gold)}
+.cards p{font-size:.95rem;line-height:1.6}
+
+/* Bronze band */
+.band{background:var(--bronze);color:var(--beige);padding:0 1.5rem clamp(3.5rem,7vw,5.5rem)}
+.shapes{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:1040px;margin:0 auto;height:clamp(160px,30vw,300px);margin-bottom:clamp(2.5rem,5vw,4rem);align-items:end}
+.shapes span{display:block;background:var(--sand)}
+.shapes span:nth-child(1){height:90%;border-radius:999px 999px 0 0;background:#e0c9b2}
+.shapes span:nth-child(2){height:100%;background:#b9a48c}
+.shapes span:nth-child(3){height:70%;border-radius:0 0 999px 999px;background:#ecd9c4;align-self:start;margin-top:auto}
+.band blockquote{font:italic clamp(1.4rem,3.4vw,2.2rem)/1.5 var(--serif);max-width:44rem;margin:0 auto;text-align:center}
+
+/* Article */
+.article h2.title{text-align:center}
+.article .lede{text-align:center;margin:-2rem auto 4rem}
+.post{max-width:640px;margin:0 auto 3.4rem}
+.post h3{font-size:clamp(1.45rem,3vw,1.9rem);color:var(--bronze);padding-bottom:.8rem;margin-bottom:1.3rem;border-bottom:1px solid var(--gold)}
+.post p+p{margin-top:1.1rem}
+.post em{font-family:var(--serif);font-size:.96em}
+
+/* Takeaways */
+.dark{background:var(--green);color:var(--beige)}
+.dark .title{color:var(--beige);text-align:center}
+.dark .squig path{stroke:var(--beige)}
+.take{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem;text-align:center}
+.take q{display:block;font:italic 1.35rem/1.4 var(--serif);quotes:none;padding-bottom:1.3rem;margin-bottom:1.3rem;border-bottom:1px solid var(--gold)}
+.take p{font-size:.98rem;line-height:1.7}
+.take cite{display:block;margin-top:1.1rem;font-style:normal;font-weight:700;font-size:.82rem;letter-spacing:.1em}
+
+/* Footer */
+footer{background:var(--bronze);color:var(--beige)}
+footer h2{font-size:clamp(1.9rem,5vw,3.4rem);max-width:34rem;line-height:1.35}
+footer .rule{margin:2.2rem 0 1.4rem;max-width:34rem}
+footer ul{list-style:none;font-size:.98rem;max-width:34rem}
+footer li+li{margin-top:.5rem}
+footer li{font-family:var(--serif)}
+footer p.up{margin-top:2.5rem}
+footer a{text-decoration:none;border-bottom:1px solid var(--gold);font:italic 1rem var(--serif)}
+
+@media (max-width:780px){
+  .trio,.cards,.take{grid-template-columns:1fr}
+  .cards .arch{max-width:240px;margin:0 auto 1rem}
+  .trio,.cards,.take{gap:3rem}
+}
+</style>
+</head>
+<body>
+
+<header class="hero" id="top">
+  <div class="badge" aria-hidden="true">C</div>
+  <h1><em>The Challenges</em> We Face</h1>
+  <p>How desire, mental health, and the rising cost of living shape the choices we make every day.</p>
+  <a class="cta" href="#article">Read the article</a>
+</header>
+
+<section id="about">
+  <div class="wrap about">
+    <div>
+      <h2><span class="scribble">About</span> this article</h2>
+      <p>Life is full of different challenges. Some come from the choices we make, while others come from the situations around us. Our desires, mental health, and financial struggles can all affect the way we think, act, and make decisions. These issues may seem different from one another, but they are connected by one important idea: the situations we face can greatly affect our everyday lives.</p>
+    </div>
+  </div>
+</section>
+
+<section id="sources">
+  <div class="wrap">
+    <h2 class="title center">Three Texts</h2>
+    <div class="trio center">
+      <div>
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 5h6a2 2 0 0 1 2 2v12a2 2 0 0 0-2-2H4z"/><path d="M20 5h-6a2 2 0 0 0-2 2v12a2 2 0 0 1 2-2h6z"/></svg></div>
+        <h3><em>The Necklace</em></h3>
+        <small><b>Short story</b>by Guy de Maupassant</small>
+      </div>
+      <div>
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></div>
+        <h3>Help-Seeking for Mental Health</h3>
+        <small><b>Systematic literature review</b>Filipino college students</small>
+      </div>
+      <div>
+        <div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 7v10M9.5 9.8h3.3a1.7 1.7 0 0 1 0 3.4h-2.6a1.7 1.7 0 0 0 0 3.4h3.3"/></svg></div>
+        <h3>The Cost of Living</h3>
+        <small><b>Article</b>Rising prices and everyday expenses</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="focuses">
+  <div class="wrap center">
+    <h2 class="title" style="margin-bottom:3.5rem">Three Challenges
+      <svg class="squig" viewBox="0 0 150 20" aria-hidden="true"><path d="M2 14 C20 2 30 2 40 12 S62 18 74 8 S100 4 110 12 S135 14 148 6" fill="none" stroke="#1d1b19" stroke-width="1"/></svg>
+    </h2>
+    <div class="cards">
+      <div>
+        <div class="arch" style="background:var(--clay)"><svg viewBox="0 0 24 24"><circle cx="12" cy="15" r="4"/><path d="M5 4c1 5 4 7 7 7s6-2 7-7"/></svg></div>
+        <h3>Desire</h3>
+        <p>When wanting more leads to unexpected consequences.</p>
+      </div>
+      <div>
+        <div class="arch" style="background:var(--sage)"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></div>
+        <h3>Mental health</h3>
+        <p>Why many students hesitate to ask for help, and what encourages them.</p>
+      </div>
+      <div>
+        <div class="arch" style="background:#b9a48c"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 7v10M9.5 9.8h3.3a1.7 1.7 0 0 1 0 3.4h-2.6a1.7 1.7 0 0 0 0 3.4h3.3"/></svg></div>
+        <h3>Rising costs</h3>
+        <p>How higher prices press on families, workers, and students.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="band">
+  <div class="shapes" aria-hidden="true"><span></span><span></span><span></span></div>
+  <blockquote>The situations we face can greatly affect our everyday lives.</blockquote>
+</div>
+
+<section class="article" id="article">
+  <div class="wrap">
+    <h2 class="title">The Article</h2>
+    <p class="lede">Desire, Mental Health, and the Cost of Living</p>
+
+    <article>
+      <div class="post">
+        <h3>When Desire Becomes a Problem</h3>
+        <p>In <em>The Necklace</em> by Guy de Maupassant, we meet Mathilde, a woman who is unhappy with her simple life. She dreams of wealth, beautiful things, and a higher social status. Her strong desire for a better life leads her to borrow a beautiful necklace for an important event.</p>
+        <p>At first, the necklace seems to represent beauty, wealth, and happiness. However, it eventually becomes connected to a serious problem that changes Mathilde's life. Her experience shows how our desires and decisions can have unexpected consequences.</p>
+        <p>The story teaches us to appreciate what we already have instead of constantly comparing ourselves with others. It also shows that appearances and material things do not always bring true happiness.</p>
+      </div>
+
+      <div class="post">
+        <h3>The Importance of Mental Health</h3>
+        <p>Just like Mathilde struggles with dissatisfaction, many students face their own personal struggles. <em>Help-Seeking for Mental Health Among Filipino College Students: A Systematic Literature Review</em> focuses on the difficulties Filipino college students experience when dealing with mental health concerns.</p>
+        <p>Students may experience stress, academic pressure, anxiety, and personal problems. Even when they need professional help, some may hesitate to seek it because of shame, fear of judgment, or the feeling that others may not understand them.</p>
+        <p>The study also shows that support from friends and family, accessible mental health services, and better understanding of mental health can encourage students to seek help. This reminds us that asking for support is important, especially when problems become difficult to handle alone.</p>
+      </div>
+
+      <div class="post">
+        <h3>The Struggle of Rising Costs</h3>
+        <p>Another challenge affecting many people is the increasing cost of living. Food, transportation, water, electricity, and other daily expenses continue to put pressure on families and workers. When prices increase while wages do not keep up, people may have to reduce their spending and carefully manage their money.</p>
+        <p>Students can also feel the effects of this problem. Those who depend on allowances may struggle to pay for transportation, food, school materials, and other needs.</p>
+        <p>The cost of living crisis is connected to larger issues such as inflation, poverty, unemployment, and limited opportunities. It shows how financial situations can influence the choices people make every day.</p>
+      </div>
+
+      <div class="post">
+        <h3>How These Challenges Are Connected</h3>
+        <p>Although <em>The Necklace</em>, the mental health study, and the article about the cost of living discuss different topics, they all show how challenges can affect people's decisions and lives.</p>
+        <p>Mathilde's desire for wealth affects her choices. Students' experiences with stress and fear of judgment can affect whether they seek mental health support. Rising prices can affect how families and students spend their money.</p>
+        <p>These situations remind us that people make decisions based on the challenges they experience. Understanding these challenges can help us become more aware of ourselves and more understanding toward others.</p>
+      </div>
+
+      <div class="post">
+        <h3>A Lesson We Can Take With Us</h3>
+        <p>Life does not always go as planned. Sometimes, our desires can lead us to difficult situations. At other times, stress, mental health struggles, or financial problems can make everyday life harder.</p>
+        <p>What matters is learning how to recognize these challenges and respond to them wisely. We can appreciate what we have, ask for support when we need it, and become more responsible with our decisions and resources.</p>
+        <p>In the end, these three texts show us that the problems people face may be different, but they can all shape the way we live, think, and make choices.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="dark" id="takeaways">
+  <div class="wrap">
+    <h2 class="title">Lessons to Take With Us
+      <svg class="squig" viewBox="0 0 150 20" aria-hidden="true"><path d="M2 12 C30 6 60 14 90 9 S130 8 148 11" fill="none" stroke="#f4f1e8" stroke-width="2.5" stroke-linecap="round"/></svg>
+    </h2>
+    <div class="take">
+      <div>
+        <q>"Appreciate what you have"</q>
+        <p>Constantly comparing ourselves with others can lead to difficult situations, and material things do not always bring true happiness.</p>
+        <cite>From The Necklace</cite>
+      </div>
+      <div>
+        <q>"Ask for support"</q>
+        <p>Support from friends and family, accessible services, and a better understanding of mental health can help when problems are hard to handle alone.</p>
+        <cite>From the mental health study</cite>
+      </div>
+      <div>
+        <q>"Manage resources wisely"</q>
+        <p>When prices rise faster than wages, careful decisions about money matter for families and students alike.</p>
+        <cite>From the cost of living article</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <section>
+    <div class="wrap">
+      <h2>Understanding these challenges helps us be more understanding toward <span class="scribble">others.</span></h2>
+      <span class="rule"></span>
+      <ul>
+        <li><em>The Necklace</em>, Guy de Maupassant</li>
+        <li><em>Help-Seeking for Mental Health Among Filipino College Students: A Systematic Literature Review</em></li>
+        <li>Article on the cost of living crisis</li>
+      </ul>
+      <p class="up"><a href="#top">Back to top</a></p>
+    </div>
+  </section>
+</footer>
+
+</body>
+</html>
